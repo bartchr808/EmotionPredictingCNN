@@ -2,18 +2,26 @@
 
 ## Dataset
 
-The dataset can be attained here: https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data
+The dataset can be attained [here](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data).
 
 ## Setting up Environment
 
-Needs Opencv, Matplotlib, PIL, h5py, python 2.7, Keras, Tensorflow, and some other standard libraries like Numpy.
+You will need the following libraries to get everything running:
+* Opencv
+* Matplotlib
+* PIL 
+* h5py
+* Python 2.7 or 3.5
+* Keras
+* Tensorflow
+* Numpy.
 
 If running into issue with not being able to import name weakref, run: `pip install backports.weakref`.
 
 If getting error `No module named google.protobuf`, run: `conda install protobuf`.
 
 ## File Description
-* **APL.py*:* my implementation of the APL activation unit.
+* **APL.py:** my implementation of the APL activation unit.
 * **batch_fscore.py:** my implementation of F-score.
 * **csv2image.py:** script to convert the .csv file from Kaggle to saved images.
 * **good_webcam.mp4:** video of the webcam working.
