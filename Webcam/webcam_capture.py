@@ -31,8 +31,15 @@ while (True):
     # Predictions
     input_data = np.resize(cropped, [1, 48, 48, 1])
     pred_array = prediction(input_data)[0]
-
-    print "Angry: ", pred_array[0], "\nFear: ", pred_array[1], "\nHappy: ", pred_array[2], "\nSad: ", pred_array[3], "\nSurprise: ", pred_array[4], "\nNeutral: ", pred_array[5]
+    
+    print("Angry: {0:.3f}%\nFear: {1:.3f}%\nHappy: {2:.3f}%\nSad: {3:.3f}%\nSurprise: {4:.3f}%\nNeutral: {5:.3f}%".format(
+        pred_array[0] * 100,
+        pred_array[1] * 100,
+        pred_array[2] * 100,
+        pred_array[3] * 100,
+        pred_array[4] * 100,
+        pred_array[5] * 100
+    ))
 
 
     # Plot

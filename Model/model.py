@@ -79,7 +79,7 @@ train_generator = train_datagen.flow_from_directory(
 
 # this is a similar generator, for validation data
 validation_generator = test_datagen.flow_from_directory(
-        '../PrivateTest',
+        '../PublicTest',
         target_size = (48, 48),
         batch_size = batch_size,
         color_mode = 'grayscale')

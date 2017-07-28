@@ -54,6 +54,6 @@ def unique_name(pardir,prefix,suffix='jpg'):
 
 
 if __name__ == '__main__':
-    filename = '../fer2013/fer2013.csv'
+    filename = './fer2013/fer2013.csv'
     filename = os.path.join(curdir,filename)
     gen_record(filename,1)
