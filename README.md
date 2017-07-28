@@ -52,19 +52,13 @@ If there are any problems you are having, please submit an issue.
 # Training the model on your own data
 If you aren't familiar with Keras' function `flow_from_directory`, put your training set into a folder called *Training* and your testing set into a folder called *PublicTest*. Instead, try running *csv2image.py* on the dataset *fer2013* as linked above and see how the folders are structured. For example:
 
---Training
-
-  --0
-
-  --1
-
-  --2
-
-  --3
-
-  --4
-
-  --5
+>Training
+>>0
+>>1
+>>2
+>>3
+>>4
+>>5
 
 where
 
