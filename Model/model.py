@@ -53,7 +53,7 @@ def model(weights = None, S = 5, p_ratio = [1.0, 2.6, 2.6, 1.0]):
 
 
 # build the model
-model = model('VGG16_regular_ninth_try2_PRIVATE_TEST.h5') # my weights
+model = model('../weights.h5') # my weights
 
 batch_size = 256
 
@@ -94,7 +94,7 @@ print("Loss: {0:.3} \nAccuracy: {1:.3%} \nF-Score: {2:.3%}").format(score[0], sc
 
 # ~~~~~~~~~~~~~~~~~~~~~~ Train model ~~~~~~~~~~~~~~~~~~~~~~
 # callback functions
-save_best = ModelCheckpoint('VGG16_regular_ninth_try2_PRIVATE_TEST2.h5', monitor='val_acc', verbose=2, save_best_only=True, mode='max')
+save_best = ModelCheckpoint('weights2.h5', monitor='val_acc', verbose=2, save_best_only=True, mode='max')
 reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2,
               patience=5, min_lr=0.001, verbose=1)
 

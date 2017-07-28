@@ -50,7 +50,7 @@ def model(weights = None, S = 5, p_ratio = [1.0, 2.6, 2.6, 1.0]):
     return model
 
 # build the model
-model = model('VGG16_regular_ninth_try2_PRIVATE_TEST.h5') # my weights
+model = model('../weights.h5') # my weights
 
 test_datagen = ImageDataGenerator(rescale = 1./255)
 
