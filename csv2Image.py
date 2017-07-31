@@ -30,14 +30,23 @@ def gen_record(csvfile,channel):
     data = zip(labels,images,data['Usage'])
 
     for d in data:
-        destdir = os.path.join(class_dir[d[-1]],str(int(d[0])))
+        label = int(d[0])
+        if label == 1: # avoid disgust labels
+            continue
+        if label > 1: # avoid labels 0, 2, 3, 4, 5, 6,
+            label -= 1
+        destdir = os.path.join(class_dir[d[-1]],str(label))
+
         if not os.path.exists(destdir):
             os.mkdir(destdir)
+
         img = d[1]
         filepath = unique_name(destdir,d[-1])
         print('[^_^] Write image to %s' % filepath)
+
         if not filepath:
             continue
+
         sig = cv2.imwrite(filepath,img)
         if not sig:
             print('Error')
@@ -50,7 +59,6 @@ def unique_name(pardir,prefix,suffix='jpg'):
     if not os.path.exists(filepath):
         return filepath
     unique_name(pardir,prefix,suffix)
-
 
 
 if __name__ == '__main__':
