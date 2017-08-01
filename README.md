@@ -1,6 +1,15 @@
 # EmotionPredictingCNN
 This was my capstone project for Udacity's Machine Learning Nanodegree.
-![Old Emotion CNN gif](https://github.com/bartchr808/EmotionPredictingCNN/blob/master/Media/webcam.gif?raw=true "Old Emotion CNN gif")
+
+The model makes the following predictions on the image below:
+* Angry:  0.00982473%
+* Fear:  0.206567%
+* **Happy:  97.8469%**
+* Sad:  0.934201%
+* Surprise:  0.00566902%
+* Neutral:  0.0242221%
+
+![Happy Image](https://github.com/bartchr808/EmotionPredictingCNN/blob/master/Media/happy.png "Happy image")
 
 ## Emotion Classification with Deep Learning
 In this project, I used various deep learning techniques that are well known like convolutional, padding, and pooling layers. However, I also incorporate [Fractional Max Pooling (FMP)](https://arxiv.org/abs/1412.6071) layers and programmed [Adaptive Piecewise Linear (APL)](https://arxiv.org/pdf/1412.6830.pdf) units/activation functions in Keras.
@@ -12,18 +21,9 @@ For my capstone proposal, you can read it [here](https://github.com/bartchr808/m
 Overall, it unoffically ranked **5th** on the Kaggle leaderboards for [this competition](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/leaderboard) with an F-score of **65.20%** and accuracy of **65.39%**.
 
 Generally this would be considered a terrible model, but relative to the Kaggle leaderboards, this is a great model. This is also apparent when you take into account some of the difficulties in the dataset (read my full report for more detail) and how hard it is to read emotions on people since many people express them differently. Finally, some emotions are sometimes very similar to people's other ones and only very minute differences separate them.
-![Happy Image](https://github.com/bartchr808/EmotionPredictingCNN/blob/master/Media/happy.png "Happy image")
-The model makes the following predictions on the above image:
-* Angry:  0.00982473%
-* Fear:  0.206567%
-* **Happy:  97.8469%**
-* Sad:  0.934201%
-* Surprise:  0.00566902%
-* Neutral:  0.0242221%
 
 
 ## Setting up Environment
-
 You will need the following libraries to get everything running (to avoid running into issues, try running the following in a Conda environment by downloading [Miniconda](https://conda.io/miniconda.html)):
 * OpenCV/cv2
 * Matplotlib
@@ -54,7 +54,6 @@ If there are any problems you are having, please submit an issue.
 * **webcam.gif:** same as good_webcam.mp4 but in gif format.
 
 ## Dataset
-
 The dataset can be attained [here](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data). It is a .csv file where the image is stored as a list of numbers in a single cell, but the script *csv2image.py* can convert them to 35,887 48x48-pixel grayscale images of faces. Of these images, there are 7 classes:
 * Angry (4953 entries)
 * Disgust (547 entries)
@@ -81,15 +80,13 @@ Training/
     4/
     5/
 ```
-where
-
+where:
 * 0 -> Angry
 * 1 -> Fear
 * 2 ->Happy
 * 3 -> Sad
 * 4 -> Surprise
 * 5 -> Neutral
-
 
 If you want to save your weights, modify line 97 in *model.py`:
 ```
@@ -108,7 +105,9 @@ Run:
 ```
 python Webcam/webcam_capture.py
 ```
-And press `Ctrl+C` to interrupt and stop running the program
+And press `Ctrl+C` to interrupt and stop running the program.
+
+![Old Emotion CNN gif](https://github.com/bartchr808/EmotionPredictingCNN/blob/master/Media/webcam.gif?raw=true "Old Emotion CNN gif")
 
 ## Known Bugs
-* **Slow Predictions:** Currently, the Webcam CNN predictions are delayed by about 3 seconds relative to the displayed image. I'm currently working on a fix to not display the image in the Pyplot until the predictions have been computed. If you have a powerful GPU this shouldn't be an issue
+* **Slow Predictions:** Currently, the Webcam CNN predictions are delayed by about 3 seconds relative to the displayed image. I'm currently working on a fix to not display the image in the Pyplot until the predictions have been computed. If you have a powerful GPU this shouldn't be an issue.
