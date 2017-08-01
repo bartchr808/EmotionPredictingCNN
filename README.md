@@ -69,7 +69,7 @@ python csv2image.py
 ```
 And it will create a folder called _Training_, _PrivateTest_, and _PublicTest_ that will house all the images.
 
-# Training the model on your own data
+## Training the model on your own data
 If you aren't familiar with Keras' function `flow_from_directory`, put your training set into a folder called *Training* and your testing set into a folder called *PublicTest*. Instead, try running *csv2image.py* on the dataset *fer2013* as linked above and see how the folders are structured. For example:
 ```
 Training/
