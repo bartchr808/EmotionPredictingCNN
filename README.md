@@ -110,4 +110,4 @@ And press `Ctrl+C` to interrupt and stop running the program.
 ![Old Emotion CNN gif](https://github.com/bartchr808/EmotionPredictingCNN/blob/master/Media/webcam.gif?raw=true "Old Emotion CNN gif")
 
 ## Known Bugs
-* **Slow Predictions:** Currently, the Webcam CNN predictions are delayed by about 3 seconds relative to the displayed image. I'm currently working on a fix to not display the image in the Pyplot until the predictions have been computed. If you have a powerful GPU this shouldn't be an issue.
+* **Slow Predictions:** Currently, the Webcam CNN predictions are delayed by about 3 seconds relative to the displayed image. Most likely a possible fix could be to not display the image in the Pyplot until the predictions have been computed. If you have a powerful GPU this shouldn't be an issue though.
